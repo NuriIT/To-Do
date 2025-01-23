@@ -13,9 +13,11 @@ pipeline {
         }
         stage ('Build') {
             steps {
+                sh '''
                 cd todo
                 npm install
                 npm run build
+                '''
             }
         }
         stage('Deploy') {
