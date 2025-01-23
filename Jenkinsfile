@@ -47,8 +47,9 @@ pipeline {
     stages {
         stage('Verify npm') {
             steps {
-                bat '"C:\\Program Files\\nodejs\\npm" -v'
+                bat 'npm -v'
             }
         }
     }
 }
+
