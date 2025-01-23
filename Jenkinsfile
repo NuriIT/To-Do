@@ -4,14 +4,14 @@ pipeline {
         nodejs 'NodeJS_20' // Ensure Node.js is installed on the Windows machine and configured in Jenkins
     }
     environment {
-        EC2_IP = '52.90.8.67'
+        EC2_IP = '44.204.193.1'
         EC2_USER = 'ubuntu'
     }
     stages {
         stage('Checkout') {
             steps {
                 // Checkout the repository
-                git branch: 'main', url: 'https://github.com/Inno-Tech-Academy/To-Do-CICD.git'
+                git branch: 'main', url: 'https://github.com/NuriIT/To-Do.git'
             }
         }
         stage('Build') {
