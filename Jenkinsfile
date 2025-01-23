@@ -4,13 +4,15 @@ pipeline {
         EC2_IP = '52.90.8.67'
         EC2_USER = 'ubuntu'
     }
+    
+
 
     stages {
         stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/Inno-Tech-Academy/To-Do-CICD.git'
             }
-            
+
         }
         stage ('Build') {
             steps {
@@ -35,6 +37,17 @@ pipeline {
                 }
 
 
+            }
+        }
+    }
+}
+
+pipeline {
+    agent any
+    stages {
+        stage('Verify npm') {
+            steps {
+                bat '"C:\\Program Files\\nodejs\\npm" -v'
             }
         }
     }
